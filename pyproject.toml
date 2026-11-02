@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillweaver-research"
+version = "0.1.0"
+description = "Research implementation of compositional skill routing"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = ["numpy>=1.24,<2", "faiss-cpu>=1.8", "rich>=13"]
+
+[project.optional-dependencies]
+models = ["sentence-transformers>=2.2", "transformers>=4.37", "torch>=2.0", "accelerate>=0.26"]
+analysis = ["scipy>=1.10", "scikit-learn>=1.2"]
+api = ["openai>=1", "httpx>=0.24"]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+addopts = "-m 'not model' -p no:cacheprovider"
+markers = ["model: requires an installed neural encoder and its model weights"]
+

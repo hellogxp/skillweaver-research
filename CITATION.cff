@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite the paper when using this research implementation or benchmark."
+type: software
+title: "SkillWeaver: Compositional Skill Routing for LLM Agents"
+authors:
+  - family-names: Gao
+    given-names: Xueping
+preferred-citation:
+  type: article
+  title: "Compositional Skill Routing for LLM Agents: Decompose, Retrieve, and Compose"
+  authors:
+    - family-names: Gao
+      given-names: Xueping
+  year: 2026
+  url: "https://arxiv.org/abs/2606.18051"
+
